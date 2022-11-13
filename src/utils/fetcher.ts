@@ -1,4 +1,4 @@
-import { API } from '@/config/axios'
+import { API } from '@/lib/axios'
 import { EP, EndPoint } from '@/utils/endPoint'
 
 const fetcher = (url: EndPoint, param?: number) =>
