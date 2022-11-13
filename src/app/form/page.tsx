@@ -17,40 +17,43 @@ const roleOptions = [
 
 export default function Page() {
   return (
-    <Form<TestValues, typeof schema>
-      onSubmit={async (values) => console.log(values)}
-      schema={schema}
-      options={{
-        shouldUnregister: true,
-      }}
-    >
-      {({ register, formState }) => (
-        <>
-          <InputField
-            type='text'
-            label='Email'
-            error={formState.errors['email']}
-            registration={register('email')}
-          />
-          <InputField
-            type='password'
-            label='Password'
-            error={formState.errors['password']}
-            registration={register('password')}
-          />
-          <SelectField
-            label='Role'
-            error={formState.errors['role']}
-            registration={register('role')}
-            options={roleOptions}
-          />
-          <div>
-            <Button type='submit' className='w-full'>
-              Register
-            </Button>
-          </div>
-        </>
-      )}
-    </Form>
+    <>
+      <h1 className='text-xl font-bold mb-2'>Form page sample</h1>
+      <Form<TestValues, typeof schema>
+        onSubmit={(values) => console.log(values)}
+        schema={schema}
+        options={{
+          shouldUnregister: true,
+        }}
+      >
+        {({ register, formState }) => (
+          <>
+            <InputField
+              type='text'
+              label='Email'
+              error={formState.errors['email']}
+              registration={register('email')}
+            />
+            <InputField
+              type='password'
+              label='Password'
+              error={formState.errors['password']}
+              registration={register('password')}
+            />
+            <SelectField
+              label='Role'
+              error={formState.errors['role']}
+              registration={register('role')}
+              options={roleOptions}
+            />
+            <div>
+              <Button type='submit' className='w-full'>
+                Register
+              </Button>
+            </div>
+          </>
+        )}
+      </Form>
+    </>
   )
 }

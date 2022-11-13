@@ -1,7 +1,6 @@
 import clsx from 'clsx'
 import { FC } from 'react'
-import { FieldError } from 'react-hook-form'
-import { UseFormRegisterReturn } from 'react-hook-form'
+import { UseFormRegisterReturn, FieldError } from 'react-hook-form'
 
 type FieldWrapperProps = {
   label?: string

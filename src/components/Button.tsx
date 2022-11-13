@@ -9,9 +9,9 @@ const variants = {
 }
 
 const sizes = {
-  sm: 'py-2 px-4 text-sm',
-  md: 'py-2 px-6 text-md',
-  lg: 'py-3 px-8 text-lg',
+  sm: 'text-sm w-20 h-6 font-semibold',
+  md: 'text-md w-28 h-8',
+  lg: 'text-lg w-40 h-10',
 }
 
 type IconProps =
@@ -40,7 +40,7 @@ const CommonButton: FC<ButtonProps> = ({
     <button
       type={type}
       className={clsx(
-        'text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150',
+        'text-white font-bold uppercase text-sm rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 flex items-center justify-center',
         variants[variant],
         sizes[size],
         className
@@ -52,7 +52,7 @@ const CommonButton: FC<ButtonProps> = ({
       ) : (
         <>
           {startIcon}
-          <span>{props.children}</span>
+          {props.children}
           {endIcon}
         </>
       )}
