@@ -26,22 +26,18 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     isLoading?: boolean
   }
 
-const CommonButton: FC<ButtonProps> = (
-  {
-    type = 'button',
-    className = '',
-    variant = 'primary',
-    size = 'md',
-    isLoading = false,
-    startIcon,
-    endIcon,
-    ...props
-  },
-  ref
-) => {
+const CommonButton: FC<ButtonProps> = ({
+  type = 'button',
+  className = '',
+  variant = 'primary',
+  size = 'md',
+  isLoading = false,
+  startIcon,
+  endIcon,
+  ...props
+}) => {
   return (
     <button
-      ref={ref}
       type={type}
       className={clsx(
         'text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150',
